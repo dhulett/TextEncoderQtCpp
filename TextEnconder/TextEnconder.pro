@@ -8,12 +8,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     encoders.cpp \
+    encoders/morsecode.cpp \
+    encoders/noencode.cpp \
     iencoder.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     encoders.h \
+    encoders/morsecode.h \
+    encoders/noencode.h \
     iencoder.h \
     mainwindow.h
 
