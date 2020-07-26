@@ -7,10 +7,14 @@ CONFIG += c++17
 DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
+    encoders.cpp \
+    iencoder.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    encoders.h \
+    iencoder.h \
     mainwindow.h
 
 FORMS += \
