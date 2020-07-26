@@ -71,3 +71,7 @@ Thumbs.db
 *.dll
 *.exe
 
+.qmake.stash
+moc_predefs.h
+target_wrapper.bat
+target_wrapper.sh
