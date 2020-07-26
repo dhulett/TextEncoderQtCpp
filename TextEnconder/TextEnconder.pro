@@ -12,17 +12,20 @@ SOURCES += \
     encoders/noencode.cpp \
     iencoder.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    textencodewidget.cpp
 
 HEADERS += \
     encoders.h \
     encoders/morsecode.h \
     encoders/noencode.h \
     iencoder.h \
-    mainwindow.h
+    mainwindow.h \
+    textencodewidget.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    textencodewidget.ui
 
 include(../MorseCodeLib/morsecodelib.pri)
 

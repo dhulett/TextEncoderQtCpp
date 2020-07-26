@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 
-#include "encoders.h"
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -18,7 +16,6 @@ public:
     ~MainWindow();
 
 private:
-    Encoders _encoder;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
