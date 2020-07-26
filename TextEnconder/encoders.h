@@ -2,7 +2,7 @@
 #define ENCODERS_H
 
 #include "iencoder.h"
-#include <QMap>
+#include <QHash>
 #include <memory>
 
 class Encoders
@@ -14,7 +14,7 @@ public:
     QString encodeInput(const QString& text, const QString &encoding);
 
 private:
-    QMap<QString, std::shared_ptr<IEncoder>> _encoders;
+    QHash<QString, std::shared_ptr<IEncoder>> _encoders;
 };
 
 #endif // ENCODERS_H
