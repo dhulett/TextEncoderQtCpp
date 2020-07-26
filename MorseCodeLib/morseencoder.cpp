@@ -33,13 +33,13 @@ const QMap<QString, QString> morseCharacters =
         {"z", "--.."},
     };
 
-QString morseEncode(const QString &text)
+QString morseEncode(const QString &text, const QString& separator)
 {
     QString morseEncoded;
     QTextStream stream(&morseEncoded);
 
     for (const auto& character : text) {
-        stream << morseCharacters[character] << " ";
+        stream << morseCharacters[character] << separator;
     }
     return morseEncoded.trimmed();
 }

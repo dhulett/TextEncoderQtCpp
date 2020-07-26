@@ -48,7 +48,7 @@ void MorseCode::it_encodes_individual_characters()
     QFETCH(QString, input);
     QFETCH(QString, expected);
 
-    QCOMPARE(morseEncode(input), expected);
+    QCOMPARE(morseEncode(input, ""), expected);
 }
 
 QTEST_APPLESS_MAIN(MorseCode)
