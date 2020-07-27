@@ -35,7 +35,7 @@ QString TextEncodeWidget::getInput()
 
 void TextEncodeWidget::setOutput(const QString &text)
 {
-    ui->outputText->setText(text);
+    ui->outputText->setPlainText(text);
 }
 
 QString TextEncodeWidget::getEncoding()
