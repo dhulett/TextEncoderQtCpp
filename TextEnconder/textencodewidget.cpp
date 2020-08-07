@@ -15,6 +15,7 @@ TextEncodeWidget::TextEncodeWidget(QWidget *parent) :
     }
 
     connect(ui->inputText, &QPlainTextEdit::textChanged, this, &TextEncodeWidget::encodeText);
+    connect(ui->outputText, &QPlainTextEdit::textChanged, this, &TextEncodeWidget::decodeText);
     connect(ui->encodingOptionsComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TextEncodeWidget::encodeText);
 }
 
@@ -25,17 +26,34 @@ TextEncodeWidget::~TextEncodeWidget()
 
 void TextEncodeWidget::encodeText()
 {
-    setOutput(_encoder.encodeInput(getInput(), getEncoding()));
+    setEncoded(_encoder.encodeInput(getDecoded(), getEncoding()));
 }
 
-QString TextEncodeWidget::getInput()
+void TextEncodeWidget::decodeText()
+{
+    setDecoded(_encoder.decodeInput(getEncoded(), getEncoding()));
+}
+
+QString TextEncodeWidget::getDecoded()
 {
     return ui->inputText->toPlainText();
 }
 
-void TextEncodeWidget::setOutput(const QString &text)
+void TextEncodeWidget::setEncoded(const QString &text)
 {
+    QSignalBlocker blocker(ui->outputText);
     ui->outputText->setPlainText(text);
+}
+
+QString TextEncodeWidget::getEncoded()
+{
+    return ui->outputText->toPlainText();
+}
+
+void TextEncodeWidget::setDecoded(const QString &text)
+{
+    QSignalBlocker blocker(ui->inputText);
+    ui->inputText->setPlainText(text);
 }
 
 QString TextEncodeWidget::getEncoding()

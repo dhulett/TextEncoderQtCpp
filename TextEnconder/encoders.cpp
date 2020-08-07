@@ -15,6 +15,11 @@ QString Encoders::encodeInput(const QString &text, const QString& encoding)
 
 }
 
+QString Encoders::decodeInput(const QString &text, const QString &encoding)
+{
+    return _encoders[encoding]->decode(text);
+}
+
 QList<QString> Encoders::availableEncodings()
 {
     return _encoders.keys();

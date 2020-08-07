@@ -4,5 +4,6 @@
 #include <QString>
 
 QString morseEncode(const QString& text, const QString& separator);
+QString morseDecode(const QString& text, const QString& separator);
 
 #endif // MORSECODETRANSLATOR_H

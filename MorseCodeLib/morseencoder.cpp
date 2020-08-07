@@ -43,3 +43,8 @@ QString morseEncode(const QString &text, const QString& separator)
     }
     return morseEncoded.trimmed();
 }
+
+QString morseDecode(const QString &text, const QString &separator)
+{
+    return text;
+}

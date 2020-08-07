@@ -6,7 +6,8 @@
 class NoEncode : public IEncoder
 {
 public:
-    QString encode(const QString &text);
+    QString encode(const QString &text) override;
+    QString decode(const QString& text) override;
 };
 
 #endif // NOENCODE_H

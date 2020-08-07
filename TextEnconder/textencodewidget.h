@@ -19,13 +19,17 @@ public:
 
 public slots:
     void encodeText();
+    void decodeText();
 
 private slots:
 
 private:
-    QString getInput();
-    void setOutput(const QString& text);
+    QString getDecoded();
+    QString getEncoded();
+    void setEncoded(const QString& text);
+    void setDecoded(const QString& text);
     QString getEncoding();
+    bool shouldConvert();
 
     Encoders _encoder;
     Ui::TextEncodeWidget *ui;

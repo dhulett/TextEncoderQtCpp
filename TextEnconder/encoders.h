@@ -12,6 +12,7 @@ public:
 
     QList<QString> availableEncodings();
     QString encodeInput(const QString& text, const QString &encoding);
+    QString decodeInput(const QString& text, const QString &encoding);
 
 private:
     QHash<QString, std::shared_ptr<IEncoder>> _encoders;

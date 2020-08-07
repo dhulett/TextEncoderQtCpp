@@ -9,6 +9,7 @@ public:
     MorseCode(const QString& separator);
 
     QString encode(const QString &text) override;
+    QString decode(const QString &text) override;
 
 private:
     QString _separator;
