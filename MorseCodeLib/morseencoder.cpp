@@ -39,12 +39,16 @@ QString morseEncode(const QString &text, const QString& separator)
     QTextStream stream(&morseEncoded);
 
     for (const auto& character : text) {
-        stream << morseCharacters[character] << separator;
+        stream << morseCharacters.value(character.toLower(), character) << separator;
     }
     return morseEncoded.trimmed();
 }
 
 QString morseDecode(const QString &text, const QString &separator)
 {
-    return text;
+    auto symbols = text.split(separator);
+    for (auto& symbol : symbols) {
+        symbol = morseCharacters.key(symbol, symbol.isEmpty() ? separator : symbol);
+    }
+    return symbols.join("");
 }
